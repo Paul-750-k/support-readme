@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenith - App Support & FAQ</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .app-title h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .app-title p {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      background: var(--primary);
+      color: var(--bg-color);
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+      color: var(--text-main);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .channels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: #0f172a;
+      padding: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .faq-item {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #e2e8f0;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="app-title">
+        <h1>Zenith</h1>
+        <p id="app-tagline">運動、健身、有氧紀錄工具</p>
+      </div>
+      <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle-btn">English</button>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p id="welcome-msg">歡迎來到【Zenith】！感謝使用本專案。這是一款專為運動、健身與有氧訓練打造的紀錄工具。如果您遇到任何問題或有改進建議，請透過以下管道與我們聯絡。</p>
+      </section>
+
+      <strong class="section-title" id="support-title">支援與管道</strong>
+      <div class="channels">
+        <a href="https://your-wiki-link.com" target="_blank" class="card">
+          <h3 id="card-wiki-title">常見問題 (Wiki)</h3>
+          <p id="card-wiki-desc">前往 Wiki 查看完整說明文件與問答。</p>
+        </a>
+        <a href="https://your-issue-link.com" target="_blank" class="card">
+          <h3 id="card-issue-title">回報 Bug</h3>
+          <p id="card-issue-desc">若發現程式錯誤，歡迎提交 Issue。</p>
+        </a>
+        <a href="mailto:xrknight@yahoo.com.tw" class="card">
+          <h3 id="card-email-title">電子郵件</h3>
+          <p>xrknight@yahoo.com.tw</p>
+        </a>
+      </div>
+
+      <strong class="section-title" id="faq-title">常見問題解答 (FAQ)</strong>
+      <div class="faq">
+        <div class="faq-item">
+          <h3 id="faq1-q">Q: 如何重置密碼？</h3>
+          <p id="faq1-a">您可以點選登入頁面上的「忘記密碼」連結，系統將引導您完成密碼重設程序。</p>
+        </div>
+        <div class="faq-item">
+          <h3 id="faq2-q">Q: 如何記錄有氧或健身數據？</h3>
+          <p id="faq2-a">進入主畫面點選「新增紀錄」，選擇對應的運動類型並輸入時間或重量即可儲存。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Paul, Hao Hsu. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const translations = {
+      zh: {
+        tagline: "運動、健身、有氧紀錄工具",
+        welcome: "歡迎來到【Zenith】！感謝使用本專案。這是一款專為運動、健身與有氧訓練打造的紀錄工具。如果您遇到任何問題或有改進建議，請透過以下管道與我們聯絡。",
+        supportTitle: "支援與管道",
+        wikiTitle: "常見問題 (Wiki)",
+        wikiDesc: "前往 Wiki 查看完整說明文件與問答。",
+        issueTitle: "回報 Bug",
+        issueDesc: "若發現程式錯誤，歡迎提交 Issue。",
+        emailTitle: "電子郵件聯絡",
+        faqTitle: "常見問題解答 (FAQ)",
+        faq1Q: "Q: 如何重置密碼？",
+        faq1A: "您可以點選登入頁面上的「忘記密碼」連結，系統將引導您完成密碼重設程序。",
+        faq2Q: "Q: 如何記錄有氧或健身數據？",
+        faq2A: "進入主畫面點選「新增紀錄」，選擇對應的運動類型並輸入時間或重量即可儲存。",
+        btnText: "English"
+      },
+      en: {
+        tagline: "Workout, Fitness & Cardio Tracker",
+        welcome: "Welcome to Zenith! Thank you for using our app. Zenith is a tool built for tracking workout, fitness, and cardio progress. If you need help or have feedback, please reach out via the options below.",
+        supportTitle: "Support Channels",
+        wikiTitle: "Documentation (Wiki)",
+        wikiDesc: "Check our Wiki page for detailed guides and FAQs.",
+        issueTitle: "Report a Bug",
+        issueDesc: "Found a bug? Feel free to submit an Issue.",
+        emailTitle: "Email Support",
+        faqTitle: "Frequently Asked Questions",
+        faq1Q: "Q: How do I reset my password?",
+        faq1A: "You can click on 'Forgot Password' on the login page and follow the instructions to reset it.",
+        faq2Q: "Q: How do I log my workouts or cardio?",
+        faq2A: "Tap 'Add Record' on the main screen, select your exercise type, input your duration or weight, and save.",
+        btnText: "繁體中文"
+      }
+    };
+
+    let currentLang = 'zh';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'zh' ? 'en' : 'zh';
+      const t = translations[currentLang];
+
+      document.getElementById('app-tagline').innerText = t.tagline;
+      document.getElementById('welcome-msg').innerText = t.welcome;
+      document.getElementById('support-title').innerText = t.supportTitle;
+      document.getElementById('card-wiki-title').innerText = t.wikiTitle;
+      document.getElementById('card-wiki-desc').innerText = t.wikiDesc;
+      document.getElementById('card-issue-title').innerText = t.issueTitle;
+      document.getElementById('card-issue-desc').innerText = t.issueDesc;
+      document.getElementById('card-email-title').innerText = t.emailTitle;
+      document.getElementById('faq-title').innerText = t.faqTitle;
+      document.getElementById('faq1-q').innerText = t.faq1Q;
+      document.getElementById('faq1-a').innerText = t.faq1A;
+      document.getElementById('faq2-q').innerText = t.faq2Q;
+      document.getElementById('faq2-a').innerText = t.faq2A;
+      document.getElementById('lang-toggle-btn').innerText = t.btnText;
+    }
+  </script>
+</body>
+</html>
